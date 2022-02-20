@@ -1,0 +1,11 @@
+hr {
+	margin-top: 0;
+}
+
+h5:not(:first-of-type) {
+	padding-top: 2rem;
+}
+
+.job-card {
+	cursor: pointer;
+}
