@@ -11,75 +11,251 @@
 <h5>Potential</h5><hr>
 
 <div class="row">
-	<!-- Example Job Card -->
-	<div class="col-xl-3 col-md-6 mb-4 job-card">
-		<div class="card border-left-primary shadow h-100 py-2" data-toggle="modal" data-target="#exampleModal">
-			<div class="card-body">
-				<div class="row no-gutters align-items-center">
-					<div class="col mr-2">
-						<div class="h5 mb-0 font-weight-bold text-gray-800">Google</div>
-						<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-							Software Engineer
+	{{ range $k, $v := .jobs }}
+		{{ if eq $v.StatusId 1 }}
+		<div class="col-xl-3 col-md-6 mb-4 job-card">
+			<div class="card border-left-primary shadow h-100 py-2" data-toggle="modal" data-target="#job{{$v.JobId}}Modal">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{$v.CompanyName}}</div>
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								{{$v.Role}}
+							</div>
 						</div>
-					</div>
-					<div class="col-auto">
-						<!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+						<div class="col-auto">
+							<!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		{{ end }}
+	{{ end }}
 </div>
 
 <h5>Applied</h5><hr>
 
 <div class="row">
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
+	{{ range $k, $v := .jobs }}
+		{{ if eq $v.StatusId 2 }}
+		<div class="col-xl-3 col-md-6 mb-4 job-card">
+			<div class="card border-left-primary shadow h-100 py-2" data-toggle="modal" data-target="#job{{$v.JobId}}Modal">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{$v.CompanyName}}</div>
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								{{$v.Role}}
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{ end }}
+	{{ end }}
 </div>
 
 <h5>Interview Stage</h5><hr>
 
 <div class="row">
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
+	{{ range $k, $v := .jobs }}
+		{{ if eq $v.StatusId 3 }}
+		<div class="col-xl-3 col-md-6 mb-4 job-card">
+			<div class="card border-left-primary shadow h-100 py-2" data-toggle="modal" data-target="#job{{$v.JobId}}Modal">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{$v.CompanyName}}</div>
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								{{$v.Role}}
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{ end }}
+	{{ end }}
 </div>
 
 <h5>Offer Made</h5><hr>
 
 <div class="row">
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
+	{{ range $k, $v := .jobs }}
+		{{ if eq $v.StatusId 4 }}
+		<div class="col-xl-3 col-md-6 mb-4 job-card">
+			<div class="card border-left-primary shadow h-100 py-2" data-toggle="modal" data-target="#job{{$v.JobId}}Modal">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{$v.CompanyName}}</div>
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								{{$v.Role}}
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{ end }}
+	{{ end }}
 </div>
 
 <h5>Denied</h5><hr>
 
 <div class="row">
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
-	<div class="col">col</div>
+	{{ range $k, $v := .jobs }}
+		{{ if eq $v.StatusId 5 }}
+		<div class="col-xl-3 col-md-6 mb-4 job-card">
+			<div class="card border-left-primary shadow h-100 py-2" data-toggle="modal" data-target="#job{{$v.JobId}}Modal">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="h5 mb-0 font-weight-bold text-gray-800">{{$v.CompanyName}}</div>
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								{{$v.Role}}
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{ end }}
+	{{ end }}
 </div>
 
 {{ range $k, $v := .jobs }}
-	<ul>
-		<li>{{ $v.JobId }}</li>
-		<li>{{ $v.CompanyName }}</li>
-		<li>{{ $v.Url }}</li>
-		<li>{{ $v.Description }}</li>
-		<li>{{ $v.Notes }}</li>
-		<li>{{ $v.StatusId }}</li>
-	</ul>
+	<div class="modal fade" id="job{{$v.JobId}}Modal" tabindex="-1" aria-labelledby="job{{$v.JobId}}ModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+			<form id="job-{{$v.JobId}}" action="/jobs/update">
+			<input type="hidden" id="JobId" name="JobId" value="{{$v.JobId}}">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="job{{$v.JobId}}ModalLabel">{{$v.CompanyName}}: {{$v.Role}}</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<ul class="nav nav-tabs" id="myTab{{$v.JobId}}" role="tablist">
+						<li class="nav-item" role="presentation">
+							<a class="nav-link active" id="home{{$v.JobId}}-tab" data-toggle="tab" href="#home{{$v.JobId}}" role="tab" aria-controls="home" aria-selected="true">Job</a>
+						</li>
+						<li class="nav-item" role="presentation">
+							<a class="nav-link" id="profile{{$v.JobId}}-tab" data-toggle="tab" href="#profile{{$v.JobId}}" role="tab" aria-controls="profile" aria-selected="false">Tasks</a>
+						</li>
+						<li class="nav-item" role="presentation">
+							<a class="nav-link" id="contact{{$v.JobId}}-tab" data-toggle="tab" href="#contact{{$v.JobId}}" role="tab" aria-controls="contact" aria-selected="false">Notes</a>
+						</li>
+					</ul>
+					<div class="tab-content" id="myTabContent{{$v.JobId}}">
+						<div class="tab-pane fade show active" id="home{{$v.JobId}}" role="tabpanel" aria-labelledby="home{{$v.JobId}}-tab">
+							<div class="form-group row">
+								<label for="company" class="col-4 col-form-label">Company</label>
+								<div class="col-8">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<i class="fa fa-building"></i>
+											</div>
+										</div>
+										<input id="CompanyName" name="CompanyName" type="text" class="form-control" value="{{$v.CompanyName}}">
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Role" class="col-4 col-form-label">Job Title</label>
+								<div class="col-8">
+									<input id="Role" name="Role" type="text" class="form-control" value="{{$v.Role}}">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Url" class="col-4 col-form-label">Job Posting URL</label>
+								<div class="col-8">
+									<input id="Url" name="Url" type="text" class="form-control" value="{{$v.Url}}">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="StatusId" class="col-4 col-form-label">Status</label>
+								<div class="col-8">
+									<select id="StatusId" name="StatusId" class="custom-select" selected="{{$v.StatusId}}">
+										<option value="1" {{if eq $v.StatusId 1}}selected{{end}}>Potential</option>
+										<option value="2" {{if eq $v.StatusId 2}}selected{{end}}>Applied</option>
+										<option value="3" {{if eq $v.StatusId 3}}selected{{end}}>Interview Stage</option>
+										<option value="4" {{if eq $v.StatusId 4}}selected{{end}}>Offer Made</option>
+										<option value="5" {{if eq $v.StatusId 5}}selected{{end}}>Denied</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Description" class="col-4 col-form-label">Description</label>
+								<div class="col-8">
+									<textarea id="Description" name="Description" cols="40" rows="5" class="form-control">{{$v.Description}}</textarea>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="profile{{$v.JobId}}" role="tabpanel" aria-labelledby="profile{{$v.JobId}}-tab">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="check1" checked>
+										<label class="custom-control-label" for="check1">Didn't have enough time to implement this feature, but I will after UGAHacks 8)</label>
+									</div>
+								</li>
+								<!-- <li class="list-group-item">
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="check2">
+										<label class="custom-control-label" for="check2">Check me</label>
+									</div>
+								</li> -->
+							</ul>
+							<h6>Add New Task</h6>
+							<div class="form-row align-items-center">
+								<div class="col-auto">
+									<label class="sr-only" for="inlineFormInput">Name</label>
+									<input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+								</div>
+								<div class="col-auto">
+									<button type="submit" class="btn btn-primary mb-2">Add</button>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="contact{{$v.JobId}}" role="tabpanel" aria-labelledby="contact{{$v.JobId}}-tab">
+							<div class="form-group row">
+								<label for="Notes" class="col-4 col-form-label">Notes</label>
+								<div class="col-8">
+									<textarea id="Notes" name="Notes" cols="40" rows="5" class="form-control">{{$v.Notes}}</textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" form="job-{{$v.JobId}}" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+			</form>
+		</div>
+	</div>
 {{ end }}
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Job Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -192,22 +368,23 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <!-- New Job Modal -->
 <div class="modal fade" id="newJobModal" tabindex="-1" aria-labelledby="newJobModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
+			<form id="newJobForm" action="/jobs/new">
 			<div class="modal-header">
-				<h5 class="modal-title">Modal title</h5>
+				<h5 class="modal-title">Add New Job</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form id="new-job">
 					<div class="form-group row">
-						<label for="company" class="col-4 col-form-label">Company</label>
+						<label for="CompanyName" class="col-4 col-form-label">Company</label>
 						<div class="col-8">
 							<div class="input-group">
 								<div class="input-group-prepend">
@@ -215,47 +392,50 @@
 										<i class="fa fa-building"></i>
 									</div>
 								</div>
-								<input id="company" name="company" type="text" class="form-control" required="required">
+								<input id="CompanyName" name="CompanyName" type="text" class="form-control" required="required">
 							</div>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="job-title" class="col-4 col-form-label">Job Title</label>
+						<label for="JobTitle" class="col-4 col-form-label">Job Title</label>
 						<div class="col-8">
-							<input id="job-title" name="job-title" type="text" class="form-control" required="required">
+							<input id="JobTitle" name="JobTitle" type="text" class="form-control" required="required">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="job-url" class="col-4 col-form-label">Job Posting URL</label>
+						<label for="Url" class="col-4 col-form-label">Job Posting URL</label>
 						<div class="col-8">
-							<input id="job-url" name="job-url" type="text" class="form-control">
+							<input id="Url" name="Url" type="text" class="form-control">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="status" class="col-4 col-form-label">Status</label>
+						<label for="StatusId" class="col-4 col-form-label">Status</label>
 						<div class="col-8">
-							<select id="status" name="status" class="custom-select" required="required">
-								<option value="potential">Potential</option>
-								<option value="applied">Applied</option>
-								<option value="interview-stage">Interview Stage</option>
-								<option value="offer-made">Offer Made</option>
-								<option value="denied">Denied</option>
+							<select id="StatusId" name="StatusId" class="custom-select" required="required">
+								<option value="1">Potential</option>
+								<option value="2">Applied</option>
+								<option value="3">Interview Stage</option>
+								<option value="4">Offer Made</option>
+								<option value="5">Denied</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group row">
 						<div class="offset-4 col-8">
-							<button name="submit" type="submit" class="btn btn-primary">Submit</button>
+							<!-- <button name="submit" type="submit" class="btn btn-primary">Submit</button> -->
 						</div>
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
-				<button type="button" class="btn btn-primary">Add</button>
+				<button type="submit" form="newJobForm" class="btn btn-primary">Add</button>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>
+
+<script src="static/js/app.js"></script>
 
 {{ template "footer.tmpl" . }}
