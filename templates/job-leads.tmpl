@@ -67,6 +67,17 @@
 	<div class="col">col</div>
 </div>
 
+{{ range $k, $v := .jobs }}
+	<ul>
+		<li>{{ $v.JobId }}</li>
+		<li>{{ $v.CompanyName }}</li>
+		<li>{{ $v.Url }}</li>
+		<li>{{ $v.Description }}</li>
+		<li>{{ $v.Notes }}</li>
+		<li>{{ $v.StatusId }}</li>
+	</ul>
+{{ end }}
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
@@ -91,13 +102,87 @@
 				</ul>
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-						Home Stuff
+						<form>
+							<div class="form-group row">
+								<label for="company" class="col-4 col-form-label">Company</label>
+								<div class="col-8">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<i class="fa fa-building"></i>
+											</div>
+										</div>
+										<input id="company" name="company" type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="job-title" class="col-4 col-form-label">Job Title</label>
+								<div class="col-8">
+									<input id="job-title" name="job-title" type="text" class="form-control">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="job-url" class="col-4 col-form-label">Job Posting URL</label>
+								<div class="col-8">
+									<input id="job-url" name="job-url" type="text" class="form-control">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="status" class="col-4 col-form-label">Status</label>
+								<div class="col-8">
+									<select id="status" name="status" class="custom-select">
+										<option value="potential">Potential</option>
+										<option value="applied">Applied</option>
+										<option value="interview-stage">Interview Stage</option>
+										<option value="offer-made">Offer Made</option>
+										<option value="denied">Denied</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="description" class="col-4 col-form-label">Description</label>
+								<div class="col-8">
+									<textarea id="description" name="description" cols="40" rows="5" class="form-control"></textarea>
+								</div>
+							</div>
+						</form>
 					</div>
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="check1" checked>
+									<label class="custom-control-label" for="check1">Check me</label>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="check2">
+									<label class="custom-control-label" for="check2">Check me</label>
+								</div>
+							</li>
+						</ul>
+						<h6>Add New Task</h6>
+						<form>
+							<div class="form-row align-items-center">
+								<div class="col-auto">
+									<label class="sr-only" for="inlineFormInput">Name</label>
+									<input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+								</div>
+								<div class="col-auto">
+									<button type="submit" class="btn btn-primary mb-2">Add</button>
+								</div>
+							</div>
+						</form>
 					</div>
 					<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-
+						<div class="form-group row">
+							<label for="notes" class="col-4 col-form-label">Notes</label>
+							<div class="col-8">
+								<textarea id="notes" name="notes" cols="40" rows="5" class="form-control"></textarea>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -120,7 +205,50 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<p>Modal body text goes here.</p>
+				<form>
+					<div class="form-group row">
+						<label for="company" class="col-4 col-form-label">Company</label>
+						<div class="col-8">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-building"></i>
+									</div>
+								</div>
+								<input id="company" name="company" type="text" class="form-control" required="required">
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="job-title" class="col-4 col-form-label">Job Title</label>
+						<div class="col-8">
+							<input id="job-title" name="job-title" type="text" class="form-control" required="required">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="job-url" class="col-4 col-form-label">Job Posting URL</label>
+						<div class="col-8">
+							<input id="job-url" name="job-url" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="status" class="col-4 col-form-label">Status</label>
+						<div class="col-8">
+							<select id="status" name="status" class="custom-select" required="required">
+								<option value="potential">Potential</option>
+								<option value="applied">Applied</option>
+								<option value="interview-stage">Interview Stage</option>
+								<option value="offer-made">Offer Made</option>
+								<option value="denied">Denied</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="offset-4 col-8">
+							<button name="submit" type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>

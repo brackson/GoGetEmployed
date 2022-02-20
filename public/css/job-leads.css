@@ -6,6 +6,14 @@ h5:not(:first-of-type) {
 	padding-top: 2rem;
 }
 
+h6 {
+	margin-top: 2rem;
+}
+
 .job-card {
 	cursor: pointer;
+}
+
+.nav-tabs {
+	margin-bottom: 1rem;
 }
