@@ -139,6 +139,7 @@
 </div>
 
 {{ range $k, $v := .jobs }}
+
 	<div class="modal fade" id="job{{$v.JobId}}Modal" tabindex="-1" aria-labelledby="job{{$v.JobId}}ModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-xl">
 			<form id="job-{{$v.JobId}}" action="/jobs/update">
@@ -212,8 +213,14 @@
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item">
 									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="check1" checked>
-										<label class="custom-control-label" for="check1">Didn't have enough time to implement this feature, but I will after UGAHacks 8)</label>
+
+										{{range $k, $task := $v.Tasks }}
+											<input type="checkbox" class="custom-control-input" id="{{ $task.TaskId }}" {{if eq $task.State 1}}checked{{end}}>
+											<label class="custom-control-label" for="{{ $task.TaskId }}">{{ $task.Description }}</label>
+										{{end}}
+
+										<!-- <input type="checkbox" class="custom-control-input" id="check1" checked>
+										<label class="custom-control-label" for="check1">Didn't have enough time to implement this feature, but I will after UGAHacks 8)</label> -->
 									</div>
 								</li>
 								<!-- <li class="list-group-item">
@@ -227,10 +234,10 @@
 							<div class="form-row align-items-center">
 								<div class="col-auto">
 									<label class="sr-only" for="inlineFormInput">Name</label>
-									<input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="">
+									<input type="text" class="form-control mb-3" id="inlineFormInput" placeholder="">
 								</div>
 								<div class="col-auto">
-									<button type="submit" class="btn btn-primary mb-2">Add</button>
+									<button type="submit" class="btn btn-primary mb-2" form="job-{{$v.JobId}}">Add</button>
 								</div>
 							</div>
 						</div>

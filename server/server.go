@@ -24,13 +24,14 @@ type Job struct {
 	Notes			string `db:"notes" form:"Notes"`
 	StatusId		int64 `db:"status_id" form:"StatusId"`
 	Role			string `db:"role" form:"Role"`
+	Tasks			[]Task `gorm:"foreignKey:job_id;references:job_id"`
 }
 
 type Task struct {
-	TaskId			string
-	Description	string
-	State				int64
-	JobId		int64
+	TaskId		string `db:"task_id" form:"TaskId" gorm:"primaryKey;auto_increment;not_null"`
+	Description	string `db:"description" form:"Description"`
+	State		int64 `db:"state" form:"State"`
+	JobId		int64 `db:"job_id" form:"JobId"`
 }
 
 // type JobWithTasks struct {
@@ -75,7 +76,8 @@ func Init() {
 
 	router.GET("/jobs", func(c *gin.Context) {
 		var jobs []Job
-		db.Find(&jobs)
+		db.Debug().Preload("Tasks").Find(&jobs)
+		fmt.Printf("%+v", jobs)
 
 		c.HTML(http.StatusOK, "job-leads.tmpl", gin.H{
 			"title": "Main website",
